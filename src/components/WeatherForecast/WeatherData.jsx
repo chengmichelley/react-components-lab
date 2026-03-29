@@ -1,0 +1,1 @@
+// contains both the day, conditions, and time
