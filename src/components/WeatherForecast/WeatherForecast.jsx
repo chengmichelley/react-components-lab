@@ -1,12 +1,21 @@
 import "./WeatherForecast.css";
+import WeatherData from "./WeatherData.jsx";
+import WeatherIcon from "./WeatherIcon.jsx"
 
-<div className="weather">
-  <h2>Day of the Week</h2>
-  <img src="" alt="" />
-  <p>
-    <span>conditions: </span>current weather conditions
-  </p>
-  <p>
-    <span>time: </span>time of day
-  </p>
-</div>;
+const WeatherForecast = ({ day, img, imgAlt, conditions, time }) => {
+ return (
+  <div className="weather">
+   <WeatherIcon 
+    img= { img }
+    imgAlt= { imgAlt }
+   />
+   <WeatherData 
+    day= { day }
+    conditions= { conditions }
+    time= { time }
+   />
+  </div>
+ );
+};
+
+export default WeatherForecast;

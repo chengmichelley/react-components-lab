@@ -1,61 +1,64 @@
 // src/App.jsx
-
-const weatherForecasts = [
-  {
-    day: "Mon",
-    img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/day.svg",
-    imgAlt: "sun icon",
-    conditions: "sunny",
-    time: "Morning",
-  },
-  {
-    day: "Tue",
-    img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/night.svg",
-    imgAlt: "moon icon",
-    conditions: "clear",
-    time: "Night",
-  },
-  {
-    day: "Wed",
-    img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/stormy.svg",
-    imgAlt: "clouds with lightning icon",
-    conditions: "stormy",
-    time: "All Day",
-  },
-  {
-    day: "Thu",
-    img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/cloudy-day.svg",
-    imgAlt: "sun overcast by clouds icon",
-    conditions: "overcast",
-    time: "Evening",
-  },
-  {
-    day: "Fri",
-    img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/cloudy-night.svg",
-    imgAlt: "moon overcast by clouds icon",
-    conditions: "cloudy",
-    time: "Night",
-  },
-];
+import WeatherData from "./components/WeatherForecast/WeatherData.jsx"
+import WeatherForecast from "./components/WeatherForecast/WeatherForecast.jsx"
+import WeatherIcon from "./components/WeatherForecast/WeatherIcon.jsx"
 
 const App = () => {
+  const weatherForecasts = [
+    {
+      day: "Mon",
+      img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/day.svg",
+      imgAlt: "sun icon",
+      conditions: "sunny",
+      time: "Morning",
+    },
+    {
+      day: "Tue",
+      img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/night.svg",
+      imgAlt: "moon icon",
+      conditions: "clear",
+      time: "Night",
+    },
+    {
+      day: "Wed",
+      img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/stormy.svg",
+      imgAlt: "clouds with lightning icon",
+      conditions: "stormy",
+      time: "All Day",
+    },
+    {
+      day: "Thu",
+      img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/cloudy-day.svg",
+      imgAlt: "sun overcast by clouds icon",
+      conditions: "overcast",
+      time: "Evening",
+    },
+    {
+      day: "Fri",
+      img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/cloudy-night.svg",
+      imgAlt: "moon overcast by clouds icon",
+      conditions: "cloudy",
+      time: "Night",
+    },
+  ];
+
   return (
     <>
       <h1>Local Weather</h1>
       <section>
-        <div className="weather">
-          <h2>Day of the Week</h2>
-          <img src="" alt="" />
-          <p>
-            <span>conditions: </span>current weather conditions
-          </p>
-          <p>
-            <span>time: </span>time of day
-          </p>
-        </div>
+          {weatherForecasts.map(( forecast, index) => (
+           <WeatherForecast
+            key={ index }
+            day= { forecast.day }
+            img= { forecast.img }
+            imgAlt= { forecast.imgAlt}
+            conditions= { forecast.conditions }
+            time= { forecast.time }
+           />
+         ))}
       </section>
-    </>
-  );
-};
+     </>
+    );
+   };
 
 export default App;
