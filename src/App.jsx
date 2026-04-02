@@ -7,6 +7,7 @@ const App = () => {
   const weatherForecasts = [
     {
       day: "Mon",
+      id: 0,
       img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/day.svg",
       imgAlt: "sun icon",
       conditions: "sunny",
@@ -14,6 +15,7 @@ const App = () => {
     },
     {
       day: "Tue",
+      id: 1,
       img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/night.svg",
       imgAlt: "moon icon",
       conditions: "clear",
@@ -21,6 +23,7 @@ const App = () => {
     },
     {
       day: "Wed",
+      id: 2,
       img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/stormy.svg",
       imgAlt: "clouds with lightning icon",
       conditions: "stormy",
@@ -28,6 +31,7 @@ const App = () => {
     },
     {
       day: "Thu",
+      id: 3,
       img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/cloudy-day.svg",
       imgAlt: "sun overcast by clouds icon",
       conditions: "overcast",
@@ -35,6 +39,7 @@ const App = () => {
     },
     {
       day: "Fri",
+      id: 4,
       img: "https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-components-lab/assets/cloudy-night.svg",
       imgAlt: "moon overcast by clouds icon",
       conditions: "cloudy",
@@ -46,9 +51,9 @@ const App = () => {
     <>
       <h1>Local Weather</h1>
       <section>
-          {weatherForecasts.map(( forecast, index) => (
+          {weatherForecasts.map(( forecast, index ) => (
            <WeatherForecast
-            key={ index }
+            key={ forecast.id }
             day= { forecast.day }
             img= { forecast.img }
             imgAlt= { forecast.imgAlt}
